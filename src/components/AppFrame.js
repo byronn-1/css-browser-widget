@@ -3,18 +3,21 @@ import { ComponentFrame } from "./ComponentFrame";
 import { AddComponentBar } from "./AddComponentBar";
 import { InputBar } from "./InputBar";
 
-export const AppFrame = (props) => {
+export const AppFrame = () => {
 
-  const [index, setIndex] = useState(null);
+  const [index, setIndex] = useState(1);
 
-  const AppFrameHandler = (props) => {
+  const AddCompHandler = () => {
     setIndex(index + 1)
-    console.log(index)
   }
-
+  const RemoveCompHandler = () => {
+    setIndex(index - 1)
+  }
   return (
     <>
-      <AddComponentBar AddComponentToAppFrame={AppFrameHandler} />
+      <AddComponentBar
+        addComponentToAppFrame={AddCompHandler}
+        removeComponentToAppFrame={RemoveCompHandler} />
       <InputBar />
       <ComponentFrame cssComponentAmount={index} />
     </>

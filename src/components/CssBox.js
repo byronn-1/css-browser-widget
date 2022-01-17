@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 
-
-
-export const CssBox = () => {
+export const CssBox = (props) => {
   const [textColor, setTextColor] = useState('');
   const [backgroundColor, setBackgroundColor] = useState('');
 
   const divStyle = {
+    outline: "solid",
     color: textColor,
     backgroundColor: backgroundColor
   }
-  console.log(divStyle)
+
   return (
     <div style={divStyle}>
       <h3 >CSS Details: </h3>
